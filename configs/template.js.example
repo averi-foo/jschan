@@ -20,8 +20,8 @@ module.exports = {
 
 	//data used in opengraph meta tags. used to generate link previews in e.g. discord, twitter, etc
 	meta: {
-		siteName: '',
-		url: 'https://averi.foo'
+		siteName: 'JSChan',
+		url: ''
 	},
 
 	language: 'en-GB',
@@ -395,7 +395,7 @@ module.exports = {
 	//default board settings when a board is created
 	boardDefaults: {
 		language: 'en-GB',
-		theme: 'averi',
+		theme: 'yotsuba',
 		codeTheme: 'ir-black',
 		sfw: true, //safe for work board
 		lockMode: 0, //board lock mode

@@ -26,9 +26,9 @@ TRIPCODESECRET="changeme"
 IPHASHSECRET="changeme"
 POSTPASSWORDSECRET="changeme"
 
-REPO_LOCATION="https://github.com/averi-foo/averi-foo"
+REPO_LOCATION="https://github.com/averi-foo/jschan"
 
-AVFOO_FOLDER=/var/www/averi-foo
+AVFOO_FOLDER=/var/www/jschan
 
 if [[ $EUID -eq 0 ]]; then
 	echo -e "Please do not run this script as root or with sudo. Only some commands need sudo in the script, run normally and input your password when it comes to them."
@@ -249,10 +249,10 @@ sudo usermod -a -G $USER www-data
 sudo chown -R www-data:www-data /var/www
 sudo chmod -R g+rwX /var/www
 
-read -p "Installing averi-foo as user: $USER. Are you sure? (y/n)" CONTINUE
+read -p "Installing Lachlan's JSChan as user: $USER. Are you sure? (y/n)" CONTINUE
 [[ "$CONTINUE" == "n" ]] && echo "Exiting..." && exit;
 
-if [[ "$(pwd)" != "/var/www/averi-foo" && -f server.js ]]; then
+if [[ "$(pwd)" != "/var/www/jschan" && -f server.js ]]; then
     read -p "Move current folder $(pwd) into /var/www/ ? (y/n)" MOVE_CURRENT_FOLDER
     AVFOO_FOLDER="/var/www/$(basename $(pwd))"
     [[ "$MOVE_CURRENT_FOLDER" == "y" ]] && sudo mv "$(pwd)" /var/www/ && sudo chown -R $USER:www-data $AVFOO_FOLDER && cd $AVFOO_FOLDER && sudo usermod -a -G $USER www-data && git config --global --add safe.directory $AVFOO_FOLDER
@@ -260,19 +260,19 @@ fi
 
 if [[ -f $AVFOO_FOLDER/server.js ]]; then
 	cd $AVFOO_FOLDER
-	sudo chown -R $USER:www-data /var/www/averi-foo
+	sudo chown -R $USER:www-data /var/www/jschan
 	sudo usermod -a -G $USER www-data
 	git config --global --add safe.directory $AVFOO_FOLDER
 fi
 
-if [[ "$(pwd)" != "/var/www/averi-foo" && ! -f server.js ]]; then
-    read -p "Git clone averi-foo into /var/www/ ? (y/n)" GIT_CLONE_AVERI_FOO
-	[[ "$GIT_CLONE_AVERI_FOO" == "y" ]] && sudo git clone $REPO_LOCATION /var/www/averi-foo && sudo chown -R $USER:www-data /var/www/averi-foo && cd /var/www/averi-foo && sudo usermod -a -G $USER www-data && git config --global --add safe.directory $AVFOO_FOLDER
+if [[ "$(pwd)" != "/var/www/jschan" && ! -f server.js ]]; then
+    read -p "Git clone jschan into /var/www/ ? (y/n)" GIT_CLONE_AVERI_FOO
+	[[ "$GIT_CLONE_AVERI_FOO" == "y" ]] && sudo git clone $REPO_LOCATION /var/www/jschan && sudo chown -R $USER:www-data /var/www/jschan && cd /var/www/jschan && sudo usermod -a -G $USER www-data && git config --global --add safe.directory $AVFOO_FOLDER
 
 fi
 
 if [[ ! -f "server.js" ]]; then
-	echo "Server.js not detected, are you sure you are in the averi-foo folder?"
+	echo "Server.js not detected, are you sure you are in the jschan folder?"
 	exit 1
 fi
 

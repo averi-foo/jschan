@@ -1,25 +1,10 @@
-<p align="center">
- <img src="https://averi.foo/file/homepage-icon.png" width=250px>
-</p>
-<p align="center">
- <img src="https://skillicons.dev/icons?i=cloudflare,nodejs" width=180px>
-</p>
+# Lachlan's JSChan
+This is a custom debranded fork of the averi.foo source code, which is a fork of jschan, an imageboard software by Thomas Lynch.
 
-
-
-Averi.foo is a custom fork of jschan, an imageboard software by Thomas Lynch.
-This site has a heavy focus on anthropomorphic animals and sanitization.
-
-Repo Mirror(s):
- - https://github.com/averi-foo/averi-foo
+This fork was created with the specific purpose of giving other site owners an up to date jschan base without all the averi.foo specific branding.
 
 Contact the author:
  - Email: administration@averi.foo
-
-## Live instance
- - https://averi.foo
- 
-This fork is intended specifically for the website above, all changes are made in service of it. If you wish to use this code as a basis for your own imageboard, you may have to manually remove all averi.foo branding, etc.
 
 ## Features
  - [x] Install script, ./install.sh
@@ -48,6 +33,8 @@ GNU AGPLv3, see [LICENSE](LICENSE).
 ## Installation & Upgrading
 See [INSTALLATION.md](INSTALLATION.md) for instructions on setting up a jschan instance or upgrading to a newer version.
 
+See the installation script at ``install.sh`` for a more automated way to get jschan up and running.
+
 ## Changelog
 See [CHANGELOG.md](CHANGELOG.md) for changes between versions.
 
@@ -57,4 +44,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 ## For generous people
 
 Please visit https://gitgud.io/fatchan/jschan and see the README.md
-for donating.
+for donating to Thomas Lynch.
